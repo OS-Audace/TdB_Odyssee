@@ -37,10 +37,17 @@
     <Reference Include="Microsoft.AnalysisServices.AdomdClient, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Oracle.ManagedDataAccess, Version=4.121.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL" />
+    <Reference Include="Oracle.ManagedDataAccessDTC, Version=4.121.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.DirectoryServices.Protocols" />
+    <Reference Include="System.EnterpriseServices" />
     <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -179,19 +186,54 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dal\CycladeConsigne.cs" />
+    <Compile Include="Dal\dsMedoc.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsMedoc.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dal\dsTdbOdyssee.cs">
+      <DependentUpon>dsTdbOdyssee.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Dal\dsTdbOdyssee.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsTdbOdyssee.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Dal\EpsydreConsigne.cs" />
+    <Compile Include="ExportToFile\ExportToFile.cs" />
+    <Compile Include="Extract\ExportComcycFiles.cs" />
+    <Compile Include="Extract\ExportConsigneCycladesFile.cs" />
+    <Compile Include="Extract\ExportConsigneEpsydreFile.cs" />
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
+    <Compile Include="Import\ImportComcycFiles.cs" />
+    <Compile Include="Import\ImportResultatConsigne.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControlLibrary\ucAdminAgences.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlLibrary\ucAdminAgences.Designer.cs">
+      <DependentUpon>ucAdminAgences.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlLibrary\ucAdminPriorties.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlLibrary\ucAdminPriorties.Designer.cs">
+      <DependentUpon>ucAdminPriorties.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlLibrary\ucAdminSettings.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlLibrary\ucAdminSettings.Designer.cs">
+      <DependentUpon>ucAdminSettings.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControlLibrary\ucAideUtilisation.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -222,11 +264,35 @@
     <Compile Include="UserControlLibrary\ucTdbNational.Designer.cs">
       <DependentUpon>ucTdbNational.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControlLibrary\ucTdbVague.cs">
+    <Compile Include="UserControlLibrary\ucAdminVague.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControlLibrary\ucTdbVague.Designer.cs">
-      <DependentUpon>ucTdbVague.cs</DependentUpon>
+    <Compile Include="UserControlLibrary\ucAdminVague.Designer.cs">
+      <DependentUpon>ucAdminVague.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlLibrary\ucAdminCommunes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlLibrary\ucAdminCommunes.Designer.cs">
+      <DependentUpon>ucAdminCommunes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlLibrary\ucAdminConsignes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlLibrary\ucAdminConsignes.Designer.cs">
+      <DependentUpon>ucAdminConsignes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlLibrary\ucAdminConsignesExecute.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlLibrary\ucAdminConsignesExecute.Designer.cs">
+      <DependentUpon>ucAdminConsignesExecute.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlLibrary\ucTdbVagues.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlLibrary\ucTdbVagues.Designer.cs">
+      <DependentUpon>ucTdbVagues.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
@@ -241,6 +307,15 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UserControlLibrary\ucAdminAgences.resx">
+      <DependentUpon>ucAdminAgences.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlLibrary\ucAdminPriorties.resx">
+      <DependentUpon>ucAdminPriorties.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlLibrary\ucAdminSettings.resx">
+      <DependentUpon>ucAdminSettings.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControlLibrary\ucAideUtilisation.resx">
       <DependentUpon>ucAideUtilisation.cs</DependentUpon>
     </EmbeddedResource>
@@ -250,16 +325,39 @@
     <EmbeddedResource Include="UserControlLibrary\ucTdbAgence.resx">
       <DependentUpon>ucTdbAgence.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControlLibrary\ucAdminConsignesExecute.resx">
+      <DependentUpon>ucAdminConsignesExecute.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControlLibrary\ucTdbFiliere.resx">
       <DependentUpon>ucTdbFiliere.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlLibrary\ucTdbNational.resx">
       <DependentUpon>ucTdbNational.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControlLibrary\ucTdbVague.resx">
-      <DependentUpon>ucTdbVague.cs</DependentUpon>
+    <EmbeddedResource Include="UserControlLibrary\ucAdminVague.resx">
+      <DependentUpon>ucAdminVague.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlLibrary\ucAdminCommunes.resx">
+      <DependentUpon>ucAdminCommunes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlLibrary\ucAdminConsignes.resx">
+      <DependentUpon>ucAdminConsignes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlLibrary\ucTdbVagues.resx">
+      <DependentUpon>ucTdbVagues.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
+    <None Include="Dal\dsMedoc.xsc">
+      <DependentUpon>dsMedoc.xsd</DependentUpon>
+    </None>
+    <None Include="Dal\dsMedoc.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsMedoc.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Dal\dsMedoc.xss">
+      <DependentUpon>dsMedoc.xsd</DependentUpon>
+    </None>
     <None Include="Dal\dsTdbOdyssee.xsc">
       <DependentUpon>dsTdbOdyssee.xsd</DependentUpon>
     </None>
@@ -281,7 +379,9 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\FOND.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Home.PNG" />
   </ItemGroup>
@@ -346,6 +446,13 @@
   <ItemGroup>
     <None Include="Resources\27096-Douds-ACDSee14.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\27129-Douds-NeroWave.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\27127-Douds-NeroBurningRom.png" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

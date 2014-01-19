@@ -32,5 +32,55 @@ namespace TdB_Odyssee.Properties {
                 return ((string)(this["TdbOdysseeConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("DATA SOURCE=MEDOC;PASSWORD=MEDOC;PERSIST SECURITY INFO=True;USER ID=MEDOC")]
+        public string MedocConnectionString {
+            get {
+                return ((string)(this["MedocConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\TDBODYSSEE")]
+        public string csDir {
+            get {
+                return ((string)(this["csDir"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\TDBODYSSEE\\FILES")]
+        public string csFilePath {
+            get {
+                return ((string)(this["csFilePath"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\TDBODYSSEE\\EXPORT_RESULTATS")]
+        public string csResultstFilePath {
+            get {
+                return ((string)(this["csResultstFilePath"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\TDBODYSSEE\\EXPORT_TDB")]
+        public string csExportFilePath {
+            get {
+                return ((string)(this["csExportFilePath"]));
+            }
+        }
     }
 }

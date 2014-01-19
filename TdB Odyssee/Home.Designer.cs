@@ -35,17 +35,20 @@
             this.rbeFiliere = new Telerik.WinControls.UI.RadButtonElement();
             this.rbeVague = new Telerik.WinControls.UI.RadButtonElement();
             this.rbeAgence = new Telerik.WinControls.UI.RadButtonElement();
-            this.ribbonTab2 = new Telerik.WinControls.UI.RibbonTab();
-            this.radRibbonBarGroup2 = new Telerik.WinControls.UI.RadRibbonBarGroup();
+            this.radRibbonBarGroup4 = new Telerik.WinControls.UI.RadRibbonBarGroup();
             this.radButtonElement1 = new Telerik.WinControls.UI.RadButtonElement();
             this.radButtonElement2 = new Telerik.WinControls.UI.RadButtonElement();
+            this.ribbonTab2 = new Telerik.WinControls.UI.RibbonTab();
+            this.radRibbonBarGroup2 = new Telerik.WinControls.UI.RadRibbonBarGroup();
+            this.rbeSettings = new Telerik.WinControls.UI.RadButtonElement();
+            this.rbeAdminVagues = new Telerik.WinControls.UI.RadButtonElement();
+            this.rbeAdminPriorites = new Telerik.WinControls.UI.RadButtonElement();
             this.radButtonElement3 = new Telerik.WinControls.UI.RadButtonElement();
-            this.radButtonElement4 = new Telerik.WinControls.UI.RadButtonElement();
-            this.radButtonElement6 = new Telerik.WinControls.UI.RadButtonElement();
+            this.rbeAdminAgences = new Telerik.WinControls.UI.RadButtonElement();
+            this.rbeAdminCommunes = new Telerik.WinControls.UI.RadButtonElement();
             this.radRibbonBarGroup3 = new Telerik.WinControls.UI.RadRibbonBarGroup();
-            this.radButtonElement7 = new Telerik.WinControls.UI.RadButtonElement();
-            this.radButtonElement8 = new Telerik.WinControls.UI.RadButtonElement();
-            this.radButtonElement9 = new Telerik.WinControls.UI.RadButtonElement();
+            this.rbeAdminConsignesExec = new Telerik.WinControls.UI.RadButtonElement();
+            this.rbeAdminConsignesHisto = new Telerik.WinControls.UI.RadButtonElement();
             this.ribbonTab3 = new Telerik.WinControls.UI.RibbonTab();
             this.radRibbonBarGroup5 = new Telerik.WinControls.UI.RadRibbonBarGroup();
             this.radButtonElement5 = new Telerik.WinControls.UI.RadButtonElement();
@@ -68,6 +71,7 @@
             this.ribbonTab3});
             this.radRibbonBar1.Location = new System.Drawing.Point(0, 0);
             this.radRibbonBar1.Name = "radRibbonBar1";
+            this.radRibbonBar1.ShowExpandButton = false;
             this.radRibbonBar1.Size = new System.Drawing.Size(1008, 175);
             this.radRibbonBar1.TabIndex = 0;
             this.radRibbonBar1.Text = "Tableaux de bord Odyssée";
@@ -78,9 +82,10 @@
             // 
             this.ribbonTab1.AccessibleDescription = "TdB";
             this.ribbonTab1.AccessibleName = "TdB";
-            this.ribbonTab1.IsSelected = true;
+            this.ribbonTab1.IsSelected = false;
             this.ribbonTab1.Items.AddRange(new Telerik.WinControls.RadItem[] {
-            this.radRibbonBarGroup1});
+            this.radRibbonBarGroup1,
+            this.radRibbonBarGroup4});
             this.ribbonTab1.Name = "ribbonTab1";
             this.ribbonTab1.Text = "TdB";
             this.ribbonTab1.Visibility = Telerik.WinControls.ElementVisibility.Visible;
@@ -142,11 +147,42 @@
             this.rbeAgence.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             this.rbeAgence.Click += new System.EventHandler(this.rbeAgence_Click);
             // 
+            // radRibbonBarGroup4
+            // 
+            this.radRibbonBarGroup4.AccessibleDescription = "Ecarts consignes";
+            this.radRibbonBarGroup4.AccessibleName = "Ecarts consignes";
+            this.radRibbonBarGroup4.Items.AddRange(new Telerik.WinControls.RadItem[] {
+            this.radButtonElement1,
+            this.radButtonElement2});
+            this.radRibbonBarGroup4.Name = "radRibbonBarGroup4";
+            this.radRibbonBarGroup4.Text = "Ecarts consignes";
+            this.radRibbonBarGroup4.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            // 
+            // radButtonElement1
+            // 
+            this.radButtonElement1.AccessibleDescription = "Listing";
+            this.radButtonElement1.AccessibleName = "Listing";
+            this.radButtonElement1.Image = global::TdB_Odyssee.Properties.Resources._27127_Douds_NeroBurningRom;
+            this.radButtonElement1.Name = "radButtonElement1";
+            this.radButtonElement1.Text = "Listing";
+            this.radButtonElement1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.radButtonElement1.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            // 
+            // radButtonElement2
+            // 
+            this.radButtonElement2.AccessibleDescription = "Récap";
+            this.radButtonElement2.AccessibleName = "Récap";
+            this.radButtonElement2.Image = global::TdB_Odyssee.Properties.Resources._27106_Douds_Calculatrice;
+            this.radButtonElement2.Name = "radButtonElement2";
+            this.radButtonElement2.Text = "Récap";
+            this.radButtonElement2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.radButtonElement2.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            // 
             // ribbonTab2
             // 
             this.ribbonTab2.AccessibleDescription = "Admin";
             this.ribbonTab2.AccessibleName = "Admin";
-            this.ribbonTab2.IsSelected = false;
+            this.ribbonTab2.IsSelected = true;
             this.ribbonTab2.Items.AddRange(new Telerik.WinControls.RadItem[] {
             this.radRibbonBarGroup2,
             this.radRibbonBarGroup3});
@@ -159,34 +195,48 @@
             this.radRibbonBarGroup2.AccessibleDescription = "Listes de valeurs";
             this.radRibbonBarGroup2.AccessibleName = "Listes de valeurs";
             this.radRibbonBarGroup2.Items.AddRange(new Telerik.WinControls.RadItem[] {
-            this.radButtonElement1,
-            this.radButtonElement2,
+            this.rbeSettings,
+            this.rbeAdminVagues,
+            this.rbeAdminPriorites,
             this.radButtonElement3,
-            this.radButtonElement4,
-            this.radButtonElement6});
+            this.rbeAdminAgences,
+            this.rbeAdminCommunes});
             this.radRibbonBarGroup2.Name = "radRibbonBarGroup2";
             this.radRibbonBarGroup2.Text = "Listes de valeurs";
             this.radRibbonBarGroup2.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             // 
-            // radButtonElement1
+            // rbeSettings
             // 
-            this.radButtonElement1.AccessibleDescription = "Vagues";
-            this.radButtonElement1.AccessibleName = "Vagues";
-            this.radButtonElement1.Image = global::TdB_Odyssee.Properties.Resources._27152_Douds_TweaksLogon;
-            this.radButtonElement1.Name = "radButtonElement1";
-            this.radButtonElement1.Text = "Vagues";
-            this.radButtonElement1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.radButtonElement1.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            this.rbeSettings.AccessibleDescription = "Settings";
+            this.rbeSettings.AccessibleName = "Settings";
+            this.rbeSettings.Image = global::TdB_Odyssee.Properties.Resources._27152_Douds_TweaksLogon;
+            this.rbeSettings.Name = "rbeSettings";
+            this.rbeSettings.Text = "Settings";
+            this.rbeSettings.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.rbeSettings.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            this.rbeSettings.Click += new System.EventHandler(this.rbeSettings_Click);
             // 
-            // radButtonElement2
+            // rbeAdminVagues
             // 
-            this.radButtonElement2.AccessibleDescription = "radButtonElement2";
-            this.radButtonElement2.AccessibleName = "radButtonElement2";
-            this.radButtonElement2.Image = global::TdB_Odyssee.Properties.Resources._27152_Douds_TweaksLogon;
-            this.radButtonElement2.Name = "radButtonElement2";
-            this.radButtonElement2.Text = "Priorités";
-            this.radButtonElement2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.radButtonElement2.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            this.rbeAdminVagues.AccessibleDescription = "Vagues";
+            this.rbeAdminVagues.AccessibleName = "Vagues";
+            this.rbeAdminVagues.Image = global::TdB_Odyssee.Properties.Resources._27152_Douds_TweaksLogon;
+            this.rbeAdminVagues.Name = "rbeAdminVagues";
+            this.rbeAdminVagues.Text = "Vagues";
+            this.rbeAdminVagues.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.rbeAdminVagues.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            this.rbeAdminVagues.Click += new System.EventHandler(this.rbeAdminVagues_Click);
+            // 
+            // rbeAdminPriorites
+            // 
+            this.rbeAdminPriorites.AccessibleDescription = "radButtonElement2";
+            this.rbeAdminPriorites.AccessibleName = "radButtonElement2";
+            this.rbeAdminPriorites.Image = global::TdB_Odyssee.Properties.Resources._27152_Douds_TweaksLogon;
+            this.rbeAdminPriorites.Name = "rbeAdminPriorites";
+            this.rbeAdminPriorites.Text = "Priorités";
+            this.rbeAdminPriorites.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.rbeAdminPriorites.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            this.rbeAdminPriorites.Click += new System.EventHandler(this.rbeAdminPriorites_Click);
             // 
             // radButtonElement3
             // 
@@ -197,68 +247,61 @@
             this.radButtonElement3.Text = "Consignes";
             this.radButtonElement3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.radButtonElement3.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            this.radButtonElement3.Click += new System.EventHandler(this.rbeAdminConsigne_Click);
             // 
-            // radButtonElement4
+            // rbeAdminAgences
             // 
-            this.radButtonElement4.AccessibleDescription = "radButtonElement4";
-            this.radButtonElement4.AccessibleName = "radButtonElement4";
-            this.radButtonElement4.Image = global::TdB_Odyssee.Properties.Resources._27152_Douds_TweaksLogon;
-            this.radButtonElement4.Name = "radButtonElement4";
-            this.radButtonElement4.Text = "Agences";
-            this.radButtonElement4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.radButtonElement4.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            this.rbeAdminAgences.AccessibleDescription = "radButtonElement4";
+            this.rbeAdminAgences.AccessibleName = "radButtonElement4";
+            this.rbeAdminAgences.Image = global::TdB_Odyssee.Properties.Resources._27152_Douds_TweaksLogon;
+            this.rbeAdminAgences.Name = "rbeAdminAgences";
+            this.rbeAdminAgences.Text = "Agences";
+            this.rbeAdminAgences.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.rbeAdminAgences.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            this.rbeAdminAgences.Click += new System.EventHandler(this.rbeAdminAgences_Click);
             // 
-            // radButtonElement6
+            // rbeAdminCommunes
             // 
-            this.radButtonElement6.AccessibleDescription = "radButtonElement6";
-            this.radButtonElement6.AccessibleName = "radButtonElement6";
-            this.radButtonElement6.Image = global::TdB_Odyssee.Properties.Resources._27152_Douds_TweaksLogon;
-            this.radButtonElement6.Name = "radButtonElement6";
-            this.radButtonElement6.Text = "Communes";
-            this.radButtonElement6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.radButtonElement6.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            this.rbeAdminCommunes.AccessibleDescription = "radButtonElement6";
+            this.rbeAdminCommunes.AccessibleName = "radButtonElement6";
+            this.rbeAdminCommunes.Image = global::TdB_Odyssee.Properties.Resources._27152_Douds_TweaksLogon;
+            this.rbeAdminCommunes.Name = "rbeAdminCommunes";
+            this.rbeAdminCommunes.Text = "Communes";
+            this.rbeAdminCommunes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.rbeAdminCommunes.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            this.rbeAdminCommunes.Click += new System.EventHandler(this.radButtonElementCommunes_Click);
             // 
             // radRibbonBarGroup3
             // 
             this.radRibbonBarGroup3.AccessibleDescription = "Consignes";
             this.radRibbonBarGroup3.AccessibleName = "Consignes";
             this.radRibbonBarGroup3.Items.AddRange(new Telerik.WinControls.RadItem[] {
-            this.radButtonElement7,
-            this.radButtonElement8,
-            this.radButtonElement9});
+            this.rbeAdminConsignesExec,
+            this.rbeAdminConsignesHisto});
             this.radRibbonBarGroup3.Name = "radRibbonBarGroup3";
             this.radRibbonBarGroup3.Text = "Consignes";
             this.radRibbonBarGroup3.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             // 
-            // radButtonElement7
+            // rbeAdminConsignesExec
             // 
-            this.radButtonElement7.AccessibleDescription = "New button";
-            this.radButtonElement7.AccessibleName = "New button";
-            this.radButtonElement7.Image = global::TdB_Odyssee.Properties.Resources._27106_Douds_Calculatrice;
-            this.radButtonElement7.Name = "radButtonElement7";
-            this.radButtonElement7.Text = "Liste";
-            this.radButtonElement7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.radButtonElement7.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            this.rbeAdminConsignesExec.AccessibleDescription = "Mise à jour";
+            this.rbeAdminConsignesExec.AccessibleName = "Mise à jour";
+            this.rbeAdminConsignesExec.Image = global::TdB_Odyssee.Properties.Resources._27096_Douds_ACDSee14;
+            this.rbeAdminConsignesExec.Name = "rbeAdminConsignesExec";
+            this.rbeAdminConsignesExec.Text = "Exécution";
+            this.rbeAdminConsignesExec.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.rbeAdminConsignesExec.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            this.rbeAdminConsignesExec.Click += new System.EventHandler(this.rbeAdminConsignesExec_Click);
             // 
-            // radButtonElement8
+            // rbeAdminConsignesHisto
             // 
-            this.radButtonElement8.AccessibleDescription = "Requetes";
-            this.radButtonElement8.AccessibleName = "Requetes";
-            this.radButtonElement8.Image = global::TdB_Odyssee.Properties.Resources._27109_Douds_DocTalachargementGoogle;
-            this.radButtonElement8.Name = "radButtonElement8";
-            this.radButtonElement8.Text = "Requetes";
-            this.radButtonElement8.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.radButtonElement8.Visibility = Telerik.WinControls.ElementVisibility.Visible;
-            // 
-            // radButtonElement9
-            // 
-            this.radButtonElement9.AccessibleDescription = "Mise à jour";
-            this.radButtonElement9.AccessibleName = "Mise à jour";
-            this.radButtonElement9.Image = global::TdB_Odyssee.Properties.Resources._27096_Douds_ACDSee14;
-            this.radButtonElement9.Name = "radButtonElement9";
-            this.radButtonElement9.Text = "Capture";
-            this.radButtonElement9.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.radButtonElement9.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            this.rbeAdminConsignesHisto.AccessibleDescription = "Requetes";
+            this.rbeAdminConsignesHisto.AccessibleName = "Requetes";
+            this.rbeAdminConsignesHisto.Image = global::TdB_Odyssee.Properties.Resources._27129_Douds_NeroWave;
+            this.rbeAdminConsignesHisto.Name = "rbeAdminConsignesHisto";
+            this.rbeAdminConsignesHisto.Text = "Historique";
+            this.rbeAdminConsignesHisto.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.rbeAdminConsignesHisto.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             // 
             // ribbonTab3
             // 
@@ -374,14 +417,17 @@
         private Telerik.WinControls.UI.RadButtonElement radButtonElement5;
         private Telerik.WinControls.UI.RadRibbonBarGroup radRibbonBarGroup6;
         private Telerik.WinControls.UI.RadButtonElement rbeVersions;
-        private Telerik.WinControls.UI.RadButtonElement radButtonElement7;
+        private Telerik.WinControls.UI.RadButtonElement rbeAdminVagues;
+        private Telerik.WinControls.UI.RadButtonElement rbeAdminPriorites;
+        private Telerik.WinControls.UI.RadButtonElement radButtonElement3;
+        private Telerik.WinControls.UI.RadButtonElement rbeAdminAgences;
+        private Telerik.WinControls.UI.RadButtonElement rbeAdminCommunes;
+        private Telerik.WinControls.UI.RadButtonElement rbeAdminConsignesHisto;
+        private Telerik.WinControls.UI.RadButtonElement rbeAdminConsignesExec;
+        private Telerik.WinControls.UI.RadRibbonBarGroup radRibbonBarGroup4;
         private Telerik.WinControls.UI.RadButtonElement radButtonElement1;
         private Telerik.WinControls.UI.RadButtonElement radButtonElement2;
-        private Telerik.WinControls.UI.RadButtonElement radButtonElement3;
-        private Telerik.WinControls.UI.RadButtonElement radButtonElement4;
-        private Telerik.WinControls.UI.RadButtonElement radButtonElement6;
-        private Telerik.WinControls.UI.RadButtonElement radButtonElement8;
-        private Telerik.WinControls.UI.RadButtonElement radButtonElement9;
+        private Telerik.WinControls.UI.RadButtonElement rbeSettings;
     }
 }
 

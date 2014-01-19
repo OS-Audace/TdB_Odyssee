@@ -143,6 +143,26 @@ namespace TdB_Odyssee.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _27127_Douds_NeroBurningRom {
+            get {
+                object obj = ResourceManager.GetObject("27127-Douds-NeroBurningRom", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _27129_Douds_NeroWave {
+            get {
+                object obj = ResourceManager.GetObject("27129-Douds-NeroWave", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _27138_Douds_Picasa {
             get {
                 object obj = ResourceManager.GetObject("27138-Douds-Picasa", resourceCulture);
@@ -196,6 +216,16 @@ namespace TdB_Odyssee.Properties {
         internal static System.Drawing.Bitmap _27161_Douds_YoutubeDL {
             get {
                 object obj = ResourceManager.GetObject("27161-Douds-YoutubeDL", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap FOND {
+            get {
+                object obj = ResourceManager.GetObject("FOND", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -1,6 +1,6 @@
 ﻿namespace TdB_Odyssee.UserControlLibrary
 {
-    partial class ucTdbNational
+    partial class ucTdbVagues
     {
         /// <summary> 
         /// Required designer variable.
@@ -45,6 +45,8 @@
             Telerik.Pivot.Core.GroupNameComparer groupNameComparer6 = new Telerik.Pivot.Core.GroupNameComparer();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.mainPivotGrid = new Telerik.WinControls.UI.RadPivotGrid();
+            this.tDBNATIONALBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dsTdbOdyssee = new TdB_Odyssee.Dal.dsTdbOdyssee();
             this.cbExportT0 = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnExportDetail = new System.Windows.Forms.Button();
@@ -55,18 +57,16 @@
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.FolderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
+            this.tDB_NATIONALTableAdapter = new TdB_Odyssee.Dal.dsTdbOdysseeTableAdapters.TDB_NATIONALTableAdapter();
             this.office2010BlackTheme1 = new Telerik.WinControls.Themes.Office2010BlackTheme();
-            this.dsTdbOdyssee = new TdB_Odyssee.Dal.dsTdbOdyssee();
-            this.vComptageResultatsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.vComptageResultatsTableAdapter = new TdB_Odyssee.Dal.dsTdbOdysseeTableAdapters.vComptageResultatsTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mainPivotGrid)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbExportMiseForme)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tDBNATIONALBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsTdbOdyssee)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vComptageResultatsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbExportMiseForme)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -91,13 +91,13 @@
             this.splitContainer1.Panel2.Controls.Add(this.shapeContainer1);
             this.splitContainer1.Size = new System.Drawing.Size(1024, 604);
             this.splitContainer1.SplitterDistance = 777;
-            this.splitContainer1.TabIndex = 19;
+            this.splitContainer1.TabIndex = 20;
             // 
             // mainPivotGrid
             // 
             propertyAggregateDescription1.AggregateFunction = sumAggregateFunction1;
             propertyAggregateDescription1.CustomName = null;
-            propertyAggregateDescription1.PropertyName = "nb";
+            propertyAggregateDescription1.PropertyName = "NB";
             propertyAggregateDescription1.StringFormat = null;
             propertyAggregateDescription1.StringFormatSelector = null;
             propertyAggregateDescription1.TotalFormat = null;
@@ -109,44 +109,44 @@
             propertyGroupDescription1.PropertyName = "VAGUE";
             propertyGroupDescription1.ShowGroupsWithNoData = false;
             propertyGroupDescription1.SortOrder = Telerik.Pivot.Core.SortOrder.Ascending;
-            propertyGroupDescription2.CustomName = null;
-            propertyGroupDescription2.GroupComparer = groupNameComparer2;
-            propertyGroupDescription2.GroupFilter = null;
-            propertyGroupDescription2.PropertyName = "T0";
-            propertyGroupDescription2.ShowGroupsWithNoData = false;
-            propertyGroupDescription2.SortOrder = Telerik.Pivot.Core.SortOrder.Ascending;
             this.mainPivotGrid.ColumnGroupDescriptions.Add(propertyGroupDescription1);
-            this.mainPivotGrid.ColumnGroupDescriptions.Add(propertyGroupDescription2);
             this.mainPivotGrid.ColumnsSubTotalsPosition = Telerik.WinControls.UI.TotalsPos.None;
             this.mainPivotGrid.ColumnWidth = 75;
-            this.mainPivotGrid.DataSource = this.vComptageResultatsBindingSource;
+            this.mainPivotGrid.DataSource = this.tDBNATIONALBindingSource;
             this.mainPivotGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainPivotGrid.Location = new System.Drawing.Point(0, 0);
             this.mainPivotGrid.Name = "mainPivotGrid";
+            propertyGroupDescription2.CustomName = null;
+            propertyGroupDescription2.GroupComparer = groupNameComparer2;
+            propertyGroupDescription2.GroupFilter = null;
+            propertyGroupDescription2.PropertyName = "CODE";
+            propertyGroupDescription2.ShowGroupsWithNoData = false;
+            propertyGroupDescription2.SortOrder = Telerik.Pivot.Core.SortOrder.Ascending;
             propertyGroupDescription3.CustomName = null;
             propertyGroupDescription3.GroupComparer = groupNameComparer3;
             propertyGroupDescription3.GroupFilter = null;
-            propertyGroupDescription3.PropertyName = "ID";
+            propertyGroupDescription3.PropertyName = "PRIORITE";
             propertyGroupDescription3.ShowGroupsWithNoData = false;
             propertyGroupDescription3.SortOrder = Telerik.Pivot.Core.SortOrder.Ascending;
             propertyGroupDescription4.CustomName = null;
             propertyGroupDescription4.GroupComparer = groupNameComparer4;
             propertyGroupDescription4.GroupFilter = null;
-            propertyGroupDescription4.PropertyName = "PRIORITE";
+            propertyGroupDescription4.PropertyName = "FIL";
             propertyGroupDescription4.ShowGroupsWithNoData = false;
             propertyGroupDescription4.SortOrder = Telerik.Pivot.Core.SortOrder.Ascending;
             propertyGroupDescription5.CustomName = null;
             propertyGroupDescription5.GroupComparer = groupNameComparer5;
             propertyGroupDescription5.GroupFilter = null;
-            propertyGroupDescription5.PropertyName = "FIL";
+            propertyGroupDescription5.PropertyName = "CONSIGNE";
             propertyGroupDescription5.ShowGroupsWithNoData = false;
             propertyGroupDescription5.SortOrder = Telerik.Pivot.Core.SortOrder.Ascending;
             propertyGroupDescription6.CustomName = null;
             propertyGroupDescription6.GroupComparer = groupNameComparer6;
             propertyGroupDescription6.GroupFilter = null;
-            propertyGroupDescription6.PropertyName = "CONSIGNE";
+            propertyGroupDescription6.PropertyName = "T0";
             propertyGroupDescription6.ShowGroupsWithNoData = false;
             propertyGroupDescription6.SortOrder = Telerik.Pivot.Core.SortOrder.Ascending;
+            this.mainPivotGrid.RowGroupDescriptions.Add(propertyGroupDescription2);
             this.mainPivotGrid.RowGroupDescriptions.Add(propertyGroupDescription3);
             this.mainPivotGrid.RowGroupDescriptions.Add(propertyGroupDescription4);
             this.mainPivotGrid.RowGroupDescriptions.Add(propertyGroupDescription5);
@@ -156,6 +156,16 @@
             this.mainPivotGrid.TabIndex = 0;
             this.mainPivotGrid.Text = "radPivotGrid1";
             this.mainPivotGrid.ThemeName = "Office2010Black";
+            // 
+            // tDBNATIONALBindingSource
+            // 
+            this.tDBNATIONALBindingSource.DataMember = "TDB_NATIONAL";
+            this.tDBNATIONALBindingSource.DataSource = this.dsTdbOdyssee;
+            // 
+            // dsTdbOdyssee
+            // 
+            this.dsTdbOdyssee.DataSetName = "dsTdbOdyssee";
+            this.dsTdbOdyssee.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // cbExportT0
             // 
@@ -252,26 +262,16 @@
             this.lineShape1.Y1 = 302;
             this.lineShape1.Y2 = 302;
             // 
-            // dsTdbOdyssee
+            // tDB_NATIONALTableAdapter
             // 
-            this.dsTdbOdyssee.DataSetName = "dsTdbOdyssee";
-            this.dsTdbOdyssee.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.tDB_NATIONALTableAdapter.ClearBeforeFill = true;
             // 
-            // vComptageResultatsBindingSource
-            // 
-            this.vComptageResultatsBindingSource.DataMember = "vComptageResultats";
-            this.vComptageResultatsBindingSource.DataSource = this.dsTdbOdyssee;
-            // 
-            // vComptageResultatsTableAdapter
-            // 
-            this.vComptageResultatsTableAdapter.ClearBeforeFill = true;
-            // 
-            // ucTdbNational
+            // ucTdbVagues
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.splitContainer1);
-            this.Name = "ucTdbNational";
+            this.Name = "ucTdbVagues";
             this.Size = new System.Drawing.Size(1024, 604);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
@@ -279,9 +279,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.mainPivotGrid)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbExportMiseForme)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tDBNATIONALBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsTdbOdyssee)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vComptageResultatsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbExportMiseForme)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -289,20 +289,20 @@
         #endregion
 
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.Button bntExpandExport;
-        private System.Windows.Forms.FolderBrowserDialog FolderBrowserDialog;
         private Telerik.WinControls.UI.RadPivotGrid mainPivotGrid;
-        private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
-        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
+        private System.Windows.Forms.BindingSource tDBNATIONALBindingSource;
+        private Dal.dsTdbOdyssee dsTdbOdyssee;
         private System.Windows.Forms.CheckBox cbExportT0;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnExportDetail;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnExportRapproClientCateg;
         private Telerik.WinControls.UI.RadCheckBox cbExportMiseForme;
+        private System.Windows.Forms.Button bntExpandExport;
+        private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
+        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
+        private System.Windows.Forms.FolderBrowserDialog FolderBrowserDialog;
+        private Dal.dsTdbOdysseeTableAdapters.TDB_NATIONALTableAdapter tDB_NATIONALTableAdapter;
         private Telerik.WinControls.Themes.Office2010BlackTheme office2010BlackTheme1;
-        private System.Windows.Forms.BindingSource vComptageResultatsBindingSource;
-        private Dal.dsTdbOdyssee dsTdbOdyssee;
-        private Dal.dsTdbOdysseeTableAdapters.vComptageResultatsTableAdapter vComptageResultatsTableAdapter;
     }
 }
